@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+html, body {
+    max-width: 100%;
+    height: 100%;
+    font-size: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Responsive design */
+@media (min-device-width:600px) {
+    img[data-src-600px] {
+        content: attr(data-src-600px, url);
+    }
+}
+
+@media (min-device-width:800px) {
+    img[data-src-800px] {
+        content: attr(data-src-800px, url);
+    }
+}
+
+@media (min-width: 640px) { body {font-size:1rem;} } 
+@media (min-width:960px) { body {font-size:1.2rem;} } 
+@media (min-width:1100px) { body {font-size:1.5rem;} }
+
+/* Basic background image styling. */
+.background-image {
+	background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+body {
+    background-color: blanchedalmond;
+    background-blend-mode: overlay;
+    overflow: hidden;
+}
+/* Styles for the alternating / transition effect. */
+.toggle-image {
+ 	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+ 	height: 100vh;
+    transition: opacity 1s ease-in-out;
+    overflow: hidden;
+}
+
+/* Styles for the specific images. */
+.first-image {
+	background-image: url('/assets/img/kimpaal.jpg');	
+	z-index: -3;
+	opacity: 0;
+}
+
+.second-image {
+	background-image: url('/assets/img/paris.jpg');
+	z-index: -2;
+	opacity: 0;
+}
+
+.third-image {
+	background-image: url('/assets/img/field.jpeg');
+	z-index: -1;
+	opacity: 0;
+}
+
+.first-image.show {
+	opacity: 1;
+}
+
+.second-image.show {
+	opacity: 1;
+}
+
+.third-image.show {
+	opacity: 1;
+}
+
+.heading {
+    width: 20rem;
+    height: 10rem;
+    margin: auto;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+.title1 {
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 5rem;
+}
+
+.title2 {
+    display: block;
+    text-align: center;
+    margin-top: 15px auto;
+    color: white;
+    font-family: serif;
+}
+
+.contact {
+    margin: 15px auto;
+    display: block;
+    width: 180px;
+    height: 50px;
+    border: 3px solid white;
+    background-color: rgba(255, 255, 255, 0);
+    color:white;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+
+    transition: background-color 1000ms, color 1000ms;
+}
+
+.contact:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: #222;
+    cursor: pointer;
+
+    transition: background-color 1000ms, color 1000ms;
+}
+
+
+
