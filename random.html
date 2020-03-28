@@ -16,16 +16,10 @@
 <button onClick="theWheel.startAnimation();">Pyöritä!</button>
 
 
-<canvas id='mycanvas'>
+<canvas id='mycanvas' width="880" height="440" data-responsiveMinWidth="180" data-responsiveScaleHeight="true" data-responsiveMargin="50">
     Browser doesn't support canvas!
 </canvas>
-<script>
-    canvas = document.getElementById('mycanvas');
- 
-    // Set canvas dimensions
-    canvas.width = window.innerWidth - 50;
-    canvas.height = window.innerHeight;
-</script>
+
 
 <script>
         let theWheel = new Winwheel({
@@ -35,57 +29,58 @@
             'fillStyle'    :'#ffffff',
             'textOrientation' : 'vertical',
             'textAlignment': 'outer',
+            'responsive'   : true,
             'segments'       :
             [
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                    {'fillStyle' : '#FFDF00', 'strokeStyle': '#ffffff', 'text': '!', 'textFillStyle' : '#000000'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                    {'fillStyle' : '#FFDF00', 'strokeStyle': '#ffffff', 'text': '!', 'textFillStyle' : '#000000'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                    {'fillStyle' : '#FFDF00', 'strokeStyle': '#ffffff', 'text': '!', 'textFillStyle' : '#000000'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'},
-                {'fillStyle' : '#000000', 'strokeStyle': '#ffffff', 'text': '?', 'textFillStyle' : '#ffffff'}
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#FFDF00', 'strokeStyle': '#90949C', 'text': '!', 'textFillStyle' : '#000000'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#FFDF00', 'strokeStyle': '#90949C', 'text': '!', 'textFillStyle' : '#000000'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#FFDF00', 'strokeStyle': '#90949C', 'text': '!', 'textFillStyle' : '#000000'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'},
+                {'fillStyle' : '#000000', 'strokeStyle': '#90949C', 'text': '?', 'textFillStyle' : '#ffffff'}
                 ],
             'animation' :
             {
