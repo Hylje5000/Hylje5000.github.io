@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(87, 87, 87);
+}
+
+h1 {
+    font-family: 'Baloo Thambi 2', cursive;
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+}
+
+button {
+    margin: 15px auto;
+    display: block;
+    width: 180px;
+    height: 50px;
+    border: 3px solid white;
+    background-color: rgba(255, 255, 255, 0);
+    color:white;
+    font-family: 'Baloo Thambi 2', cursive;
+    font-size: large;
+    border-radius: 5px;
+
+    transition: background-color 1000ms, color 1000ms;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: #222;
+    cursor: pointer;
+
+    transition: background-color 1000ms, color 1000ms;
+}
+
+canvas {
+    margin: 15px auto;
+    display: block;
+}
