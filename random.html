@@ -1,15 +1,74 @@
 <!DOCTYPE html>
-<html>
-<body>
-
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body>
+<script src='./assets/js/Winwheel.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js" integrity="sha256-3arngJBQR3FTyeRtL3muAGFaGcL8iHsubYOqq48mBLw=" crossorigin="anonymous"></script>
 <h2>Miska Kytö - Demo</h2>
 <p>Arvotaan listasta random objekti</p>
 <p>Objekteja on tällä hetkellä 200 kappaletta (Objekti 1 - Objekti 200)</p>
 <p>Objektien nimiä voidaan muokata helposti sivun koodista</p>
 
 
-<button onclick="document.getElementById('arvottu').innerHTML = objektit[getRndInteger(0,201)]">Arvo yksi objekti</button>
-<p id="arvottu">arvottu numero: </p>
+<button onClick="theWheel.startAnimation();">Arvo objekti!</button>
+
+<p id="arvottu">Arvottava objekti:</p>
+
+<canvas id='canvas' width="880" height="500">
+
+</canvas>
+
+<script>
+        let theWheel = new Winwheel({
+            'canvasId': 'canvas',
+            'numSegments'  : 20,         // Number of segments
+            'fillStyle'    :'#e7706f',
+            'segments'       :
+            [
+                {'fillStyle' : '#eae56f'},
+                {'fillStyle' : '#89f26e'},
+                {'fillStyle' : '#7de6ef'},
+                {'fillStyle' : '#e7706f'},
+                {'fillStyle' : '#eae56f'},
+                {'fillStyle' : '#89f26e'},
+                {'fillStyle' : '#7de6ef'},
+                {'fillStyle' : '#e7706f'},
+                {'fillStyle' : '#eae56f'},
+                {'fillStyle' : '#89f26e'},
+                {'fillStyle' : '#7de6ef'},
+                {'fillStyle' : '#e7706f'},
+                {'fillStyle' : '#eae56f'},
+                {'fillStyle' : '#89f26e'},
+                {'fillStyle' : '#7de6ef'},
+                {'fillStyle' : '#e7706f'},
+                {'fillStyle' : '#eae56f'},
+                {'fillStyle' : '#89f26e'},
+                {'fillStyle' : '#7de6ef'},
+                {'fillStyle' : '#e7706f'},
+                {'fillStyle' : '#eae56f'},
+                {'fillStyle' : '#89f26e'},
+                {'fillStyle' : '#7de6ef'},
+                {'fillStyle' : '#e7706f'}
+    ],
+            'textFontSize' : 28,        // Font size.
+            'animation' :               // Definition of the animation
+            {
+                'type'     : 'spinToStop',
+                'duration' : 5,
+                'spins'    : 8,
+                'callbackFinished' : alertPrize
+            }
+        });
+
+        // Called when the animation has finished.
+        function alertPrize(indicatedSegment)
+        {
+            // Do basic alert of the segment text.
+            let randomi = objektit[getRndInteger(0,201)];
+            document.getElementById('arvottu').innerHTML = randomi
+            alert(randomi)
+        }
+    </script>
+
 <script>
     function getRndInteger(min,max) {
         return Math.floor(Math.random() * (max - min)) + min;
@@ -218,5 +277,6 @@
     ]
 </script>
 
-</body>
-</html>
+
+
+</body></html>
