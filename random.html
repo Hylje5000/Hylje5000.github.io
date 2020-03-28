@@ -107,12 +107,12 @@
             if (lotto === 300) {
                 lottovoitto = true
             }
-            if (lottovoitto = false) {
+            if (lottovoitto === false) {
             let randomi = objektit[getRndInteger(0,104 + 1)];
             document.getElementById('arvottu').innerHTML = randomi
             resetWheel()
             }
-            if (lottovoitto = true) {
+            if (lottovoitto === true) {
                 randomi = "Voitit palkinnon! Ota meihin yhteyttä lisätietoja varten: mitatehda.group@gmail.com"
                 document.getElementById('arvottu').innerHTML = randomi
                 resetWheel()
