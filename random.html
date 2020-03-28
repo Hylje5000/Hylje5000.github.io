@@ -102,7 +102,17 @@
         function alertPrize(indicatedSegment)
         {
             // Do basic alert of the segment text.
-            let randomi = objektit[getRndInteger(0,105 + 1)];
+            let lottovoitto = false
+            let lotto = Math.floor(Math.random() * 3000);
+            if (lotto = 300) {
+                lottovoitto = true
+            }
+            if (lottovoitto = false) {
+            let randomi = objektit[getRndInteger(0,104 + 1)];
+            }
+            if (lottovoitto = true) {
+                let randomi = "Voitit palkinnon! Ota meihin yhteyttä lisätietoja varten: mitatehda.group@gmail.com"
+            }
             document.getElementById('arvottu').innerHTML = randomi
             resetWheel()
         }
@@ -217,7 +227,6 @@
         "Osta kukkia jollekin!",
         "Siivoa turhat kuvat pois puhelimestasi!",
         "Myy turhia tavaroita torilla!",
-        "Voitit palkinnon! Ota meihin yhteyttä lisätietoja varten: mitatehda.group@gmail.com"
     ]
 </script>
 
