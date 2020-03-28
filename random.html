@@ -11,6 +11,7 @@
 
 <button onClick="theWheel.startAnimation();">Arvo objekti!</button>
 
+
 <p id="arvottu">Arvottava objekti:</p>
 
 <canvas id='canvas' width="880" height="500">
@@ -59,13 +60,21 @@
             }
         });
 
-        // Called when the animation has finished.
+
+        function resetWheel()
+            {
+                theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
+                theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
+                theWheel.draw();                // Call draw to render changes to the wheel.
+            }
+         // Called when the animation has finished.
         function alertPrize(indicatedSegment)
         {
             // Do basic alert of the segment text.
             let randomi = objektit[getRndInteger(0,201)];
             document.getElementById('arvottu').innerHTML = randomi
             alert(randomi)
+            resetWheel()
         }
     </script>
 
