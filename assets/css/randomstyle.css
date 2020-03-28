@@ -9,6 +9,13 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-family: 'Baloo Thambi 2', cursive;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
 p {
     font-family: 'Baloo Thambi 2', cursive;
     color: white;
