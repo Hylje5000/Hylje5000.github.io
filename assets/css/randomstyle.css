@@ -46,8 +46,16 @@ button:hover {
 }
 
 canvas {
-    margin: 15px auto;
+    margin: auto;
     display: block;
     margin-bottom: -10px;
+    z-index: -1;
+}
+
+#pointer {
+    display: block;
+    margin: 15px auto;
+    margin-bottom: 0px;
+    z-index: 999;
 }
 
