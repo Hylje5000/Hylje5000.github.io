@@ -91,6 +91,23 @@
             }
         });
 
+        function calculatePrize()
+        {
+            var lottovoitto = false
+            let lotto = Math.floor(Math.random() * 3000);
+            if (lotto === 300) {
+                lottovoitto = true;
+                let voittoStop = 177;
+                theWheel.animation.stopAngle = voittoStop;
+                theWheel.startAnimation();
+            }
+            else {
+                let stopAt = (91 + Math.floor((Math.random() * 43)));
+                theWheel.animation.stopAngle = stopAt;
+                theWheel.startAnimation();
+            }
+            return lottovoitto;
+        }
 
         function resetWheel()
             {
@@ -99,26 +116,22 @@
                 theWheel.draw();
             }
          // Called when the animation has finished.
-        function alertPrize(indicatedSegment)
+         function alertPrize(indicatedSegment)
         {
-            // Do basic alert of the segment text.
-            let lottovoitto = false
-            let lotto = Math.floor(Math.random() * 3000);
-            if (lotto === 300) {
-                lottovoitto = true
-            }
+            var lottovoitto = calculatePrize();
             if (lottovoitto === false) {
             let randomi = objektit[getRndInteger(0,103 + 1)];
             document.getElementById('arvottu').innerHTML = randomi
             resetWheel()
             }
-            if (lottovoitto === true) {
+            else if (lottovoitto === true) {
                 randomi = "Voitit palkinnon! Ota meihin yhteyttä lisätietoja varten: mitatehda.group@gmail.com"
                 document.getElementById('arvottu').innerHTML = randomi
                 resetWheel()
             }
             
         }
+       
     </script>
 
 <script>
