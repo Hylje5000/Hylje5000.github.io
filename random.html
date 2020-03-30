@@ -13,7 +13,7 @@
 
 
 <h2 id="arvottu"></h2>
-<button onClick="theWheel.startAnimation();">Pyöritä!</button>
+<button onClick="spinnar();">Pyöritä!</button>
 <img id="pointer" src="https://www.mkvd.me/assets/img/basic_pointer.png" />
 <div id="canvascontainer">
 <canvas id='mycanvas' width="880" height="640">
@@ -91,6 +91,13 @@
             }
         });
 
+        const nappula = document.querySelector('button') 
+
+        function spinnar() {
+            resetWheel();
+            theWheel.startAnimation();
+        }
+
         function calculatePrize()
         {
             var lottovoitto = false
@@ -99,12 +106,12 @@
                 lottovoitto = true;
                 let voittoStop = 177;
                 theWheel.animation.stopAngle = voittoStop;
-                theWheel.startAnimation();
+                
             }
             else {
-                let stopAt = (91 + Math.floor((Math.random() * 43)));
+                let stopAt = (91 + Math.floor((Math.random() * 20)));
                 theWheel.animation.stopAngle = stopAt;
-                theWheel.startAnimation();
+                
             }
             return lottovoitto;
         }
@@ -114,6 +121,7 @@
                 theWheel.stopAnimation(false);
                 theWheel.rotationAngle = 0;
                 theWheel.draw();
+                nappula.disabled = true;
             }
          // Called when the animation has finished.
          function alertPrize(indicatedSegment)
@@ -122,15 +130,16 @@
             if (lottovoitto === false) {
             let randomi = objektit[getRndInteger(0,103 + 1)];
             document.getElementById('arvottu').innerHTML = randomi
-            resetWheel()
+            
             }
             else if (lottovoitto === true) {
                 randomi = "Voitit palkinnon! Ota meihin yhteyttä lisätietoja varten: mitatehda.group@gmail.com"
                 document.getElementById('arvottu').innerHTML = randomi
-                resetWheel()
+                
             }
-            
+            nappula.disabled = false
         }
+        
        
     </script>
 
