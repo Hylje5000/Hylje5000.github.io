@@ -136,11 +136,11 @@
 
 <script>
     function getRndInteger(min,max) {
-        return Math.floor(Math.random() * 1);
+        return Math.floor(Math.random() * (max - min)) + min;
     }
-    var linkki = 'Klikkaa tästä'
+    var linkki = 'Katso tästä ohjeet';
     var objektit = [
-        "Mene lenkille! " + linkki.link("https://www.yle.fi"),
+        "Mene lenkille! " + linkki.link("https://www.wikihow.com/Jog"),
         "Lue kirja ja sivistä itseäsi!",
         "Koita keksiä jokin hyvä yritysidea!", 
         "Opiskele sijoittamista!",
