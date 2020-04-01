@@ -128,7 +128,7 @@
         {
             var lottovoitto = calculatePrize();
             if (lottovoitto === false) {
-            let randomi = objektit[0];
+            let randomi = objektit[getRndInteger(0,103 + 1)];
             document.getElementById('arvottu').innerHTML = randomi
             
             }
@@ -145,7 +145,7 @@
 
 <script>
     function getRndInteger(min,max) {
-        return Math.floor(Math.random() * (max - min)) + min;
+        return 0;
     }
     var objektit = [
         "Mene lenkille!" + link("https://www.yle.fi"),
