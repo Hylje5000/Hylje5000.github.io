@@ -156,6 +156,15 @@
 <script>
     function getRndInteger(min,max) {
         return Math.floor(Math.random() * (max - min)) + min;
+
+        //Fix links in iframe
+        var links = document.getElementsByTagName('a');
+        var len = links.length;
+
+        for(var i=0; i<len; i++)
+        {
+        links[i].target = "_blank";
+        }
     }
     // Linkki tekstit
     var lukeminen = "Tässä sen hyödyt";
@@ -284,14 +293,7 @@
         "Myy turhia tavaroita torilla! " + noTitle.link("https://www.tori.fi"),
     ]
 
-    //Fix links in iframe
-    var links = document.getElementsByTagName('a');
-    var len = links.length;
 
-    for(var i=0; i<len; i++)
-    {
-    links[i].target = "_blank";
-    }
 </script>
 
 </body>
