@@ -156,15 +156,6 @@
 <script>
     function getRndInteger(min,max) {
         return Math.floor(Math.random() * (max - min)) + min;
-
-        //Fix links in iframe
-        var links = document.getElementsByTagName('a');
-        var len = links.length;
-
-        for(var i=0; i<len; i++)
-        {
-        links[i].target = "_blank";
-        }
     }
     // Linkki tekstit
     var lukeminen = "Tässä sen hyödyt";
@@ -292,8 +283,6 @@
         "Siivoa turhat kuvat pois puhelimestasi!",
         "Myy turhia tavaroita torilla! " + noTitle.link("https://www.tori.fi"),
     ]
-
-
 </script>
 
 </body>
