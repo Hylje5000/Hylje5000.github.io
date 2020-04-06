@@ -285,5 +285,15 @@
     ]
 </script>
 
+
+<script>
+    // rerouting links to opening new tabs
+    Event.observe(window, 'load', function() {
+      $$('a').each(function(e) {
+        e.writeAttribute('target', '_blank');
+      });
+    });
+  </script>
+
 </body>
 </html>
