@@ -5,7 +5,7 @@
 </head>
 <body>
 <link rel="stylesheet" href="https://www.mkvd.me/assets/css/randomstyle.css">
-<script src="https://www.mkvd.me/assets/js/Winwheel.min.js" crossorigin="anonymous"></script>
+<script src="Winwheel.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js" integrity="sha256-3arngJBQR3FTyeRtL3muAGFaGcL8iHsubYOqq48mBLw=" crossorigin="anonymous"></script>
 
 
@@ -13,7 +13,7 @@
 
 
 <h2 id="arvottu"></h2>
-<button onClick="theWheel.startAnimation();">Pyöritä!</button>
+<button onClick="spinnar();">Pyöritä!</button>
 <img id="pointer" src="https://www.mkvd.me/assets/img/basic_pointer.png" />
 <div id="canvascontainer">
 <canvas id='mycanvas' width="880" height="640">
@@ -85,28 +85,45 @@
             'animation' :
             {
                 'type'     : 'spinToStop',
-                'duration' : 5,
-                'spins'    : 8,
+                'duration' : 3,
+                'spins'    : 2,
                 'callbackFinished' : alertPrize
             }
         });
 
-        function calculatePrize()
-        {
-            var lottovoitto = false
+        const nappula = document.querySelector('button') 
+
+        function spinnar() {
+            resetWheel();
+            calculatePrize()
+            theWheel.startAnimation();
+
+        }
+
+        function lottoVoitto() {
+            var Voitto = false;
             let lotto = Math.floor(Math.random() * 3000);
             if (lotto === 300) {
-                lottovoitto = true;
-                let voittoStop = 177;
-                theWheel.animation.stopAngle = voittoStop;
-                theWheel.startAnimation();
+                Voitto = true;
             }
             else {
-                let stopAt = (91 + Math.floor((Math.random() * 43)));
-                theWheel.animation.stopAngle = stopAt;
-                theWheel.startAnimation();
+                Voitto = false;;
             }
-            return lottovoitto;
+            return Voitto;
+        }
+
+        function calculatePrize()
+        {
+            Lotto = lottoVoitto();
+            if (Lotto === true) {
+                let voittoStop = 177;
+                theWheel.animation.stopAngle = voittoStop;
+            }
+            else {
+                let stopAt = 91 + Math.floor(Math.random() * 20);
+                theWheel.animation.stopAngle = stopAt;
+                
+            }
         }
 
         function resetWheel()
@@ -114,23 +131,25 @@
                 theWheel.stopAnimation(false);
                 theWheel.rotationAngle = 0;
                 theWheel.draw();
+                nappula.disabled = true;
             }
          // Called when the animation has finished.
          function alertPrize(indicatedSegment)
         {
-            var lottovoitto = calculatePrize();
+            var lottovoitto = lottoVoitto();
             if (lottovoitto === false) {
             let randomi = objektit[getRndInteger(0,103 + 1)];
             document.getElementById('arvottu').innerHTML = randomi
-            resetWheel()
+            
             }
             else if (lottovoitto === true) {
                 randomi = "Voitit palkinnon! Ota meihin yhteyttä lisätietoja varten: mitatehda.group@gmail.com"
                 document.getElementById('arvottu').innerHTML = randomi
-                resetWheel()
+                
             }
-            
+            nappula.disabled = false
         }
+        
        
     </script>
 
@@ -138,9 +157,9 @@
     function getRndInteger(min,max) {
         return Math.floor(Math.random() * (max - min)) + min;
     }
-    var linkki = 'Katso tästä ohjeet';
+    
     var objektit = [
-        "Mene lenkille! " + linkki.link("https://www.wikihow.com/Jog"),
+        "Mene lenkille!",
         "Lue kirja ja sivistä itseäsi!",
         "Koita keksiä jokin hyvä yritysidea!", 
         "Opiskele sijoittamista!",
